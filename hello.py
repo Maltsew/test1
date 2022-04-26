@@ -10,5 +10,5 @@ def wsgi_application(environ, start_response):
     #в таком случае - генератор списка параметров
     #UPD: параметры передаеются в байтовом виде
     body = [bytes(i + '\n', 'ascii') for i in environ['QUERY_STRING'].split('&')]
-    start_response(status, header)
+    start_response(status, headers)
     return body
